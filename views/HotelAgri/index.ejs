@@ -1,0 +1,136 @@
+<% layout("./layout/boilerplate.ejs")%>
+<body>
+    <style>
+        #filters{
+            display: flex;
+    
+        }
+        .filter{
+            display: inline;
+            justify-content: center;
+            margin-left: 4rem;
+            align-items: center;
+            text-align: center;
+            opacity: 0.7;
+            padding-top: 0;
+            
+        }
+        #filters a{
+            text-decoration: none;
+            color: black;
+            margin-top: 0;
+            display: inline;
+            justify-content: center;
+            margin-left: 4rem;
+            align-items: center;
+            text-align: center;
+            opacity: 0.7;
+            padding-top: 0;
+        }
+        .filter:hover{
+            opacity: 1;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+    </style>
+     <div id="filters" class=" mb-3">
+        <a href="/Fun">
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>FunTour</p>
+             </div>
+        </a>
+        <a href="/listing">
+         <div class="filter">
+            <div><i class="fa-brands fa-fort-awesome"></i></div>
+            <p>Fort</p>
+         </div>
+        </a>
+        <a href="/Agri">
+            <div class="filter">
+                <div><i class="fa-solid fa-tractor"></i></div>
+                <p>AgriTour</p>
+             </div>
+        </a>
+         <a href="/Trending">
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+             </div>
+         </a>
+         <a href="/Camping">
+            <div class="filter">
+                <div><i class="fa-solid fa-campground"></i></div>
+                <p>Camping</p>
+             </div>
+         </a>
+         <a href="/Waterfall">
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain-sun"></i></div>
+                <p>Waterfall</p>
+             </div>
+         </a>
+         <a href="/Hotels">
+            <div class="filter">
+                <div><i class="fa-solid fa-hotel"></i></div>
+                <p>Hotels</p>
+             </div>
+         </a>
+         <a href="/Rooms">
+            <div class="filter">
+                <div><i class="fa-solid fa-bed"></i></div>
+                <p>Rooms</p>
+            </div>
+         </a>
+         <div class="switch-info">
+            <div class="form-check  form-switch">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Display Total Before Taxes</label>
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            </div>
+        </div>
+     </div>
+    
+    <ul>
+        
+        <div class="row row-cols-md-2 row-cols-lg-4 row-cols-sm-1">
+            
+            <% for(let li of list.Hotel){ %>
+            <a class="li-link" href="/Agri/<%=id%>/hotels/<%=li._id%>">
+                <div class="card col card-listing" style="width: 15rem">
+                    <% if (li.image && li.image.length >= 0) { %>
+                        <img src="<%= li.image[0].path %>" class="card-img-top" style="height: 15rem" alt="...">
+                      <% } else { %>
+                        <img src="/list" class="card-img-top" style="height: 15rem" alt="Default Image">
+                      <% } %>
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                    <p class="card-text">
+                        <b><%=li.title%></b> <br>
+                        &#8377;<%=li.price%>
+                        <i class="hidden">&nbsp; + 18% GST</i>
+                    </p>
+                    
+                    </div>
+                </div>
+            </a>
+            <% } %>
+        </div>
+            
+       
+    </ul>
+    
+</body>
+<script>
+    let tax=document.getElementById("flexSwitchCheckDefault");
+    tax.addEventListener("click",()=>{
+        let taxInfo=document.getElementsByClassName("hidden");
+        for(let info of taxInfo){
+            if(info.style.display!="inline"){
+                info.style.display="inline";
+            }else{
+                info.style.display="none";
+            }
+        }
+    })
+</script>

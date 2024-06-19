@@ -1,0 +1,57 @@
+<% layout("./Layout/boilerplate.ejs")-%>
+
+    <body>
+        <div class="row">
+            <div class="col-6 offset-2 mt-3">
+                <h3>Edit The Given Spot</h3>
+                <form method="post" action="/Agri/<%=editData._id%>?_method=PUT"  novalidate class="needs-validation" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" placeholder="add a new title" name="listing[title]"
+                            value="<%=editData.title%>" class="form-control" required>
+                        <div class="invalid-feedback">field to be required</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="listing[description]" id="" cols="30" rows="1"
+                            class="form-control" required><%=editData.description%></textarea>
+                        <div class="invalid-feedback">field to be required</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="Number" placeholder="add a price here" name="listing[price]"
+                            value="<%=editData.price%>" class="form-control" required>
+                        <div class="invalid-feedback">field to be required</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Original Image</label> <br>
+                        <img src="<%=editImageUrl[0]%>" alt="" height="300px" width="300px">
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Image</label>
+                        <input type="file" multiple placeholder="add a image here" name="image"
+                            value="<%=editData.image.path%>" class="form-control">
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-md">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" placeholder="add a location here" name="listing[location]"
+                                value="<%=editData.location%>" class="form-control" required>
+                            <div class="invalid-feedback">field to be required</div>
+                        </div>
+                        <div class="mb-3 col-md">
+                            <label for="country" class="form-label">Country</label>
+                            <input type="text" placeholder="add a country name here" name="listing[country]"
+                                value="<%=editData.country%>" class="form-control" required>
+                            <div class="invalid-feedback">field to be required</div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-dark add-btn">submit</button>
+                </form>
+            </div>
+        </div>
+    <script src="/JS/script.js"></script>
+    </body>
+
+    </html>

@@ -1,0 +1,48 @@
+<% layout("./layout/boilerplate.ejs")%>
+<body>
+    
+    <form method="POST" action="/listing/<%=id%>/hotels" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <h2>Add a new Listing here</h2>
+                <div class="mt-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" placeholder="add a title here" class="form-control" name="listing[title]" >
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+        
+                <div class="mt-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="listing[description]"  class="form-control" required></textarea>
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+        
+                <div class="mt-3">
+                    <label for="image" class="form-label">Upload Image</label>
+                    <input type="file" placeholder="add image link here" multiple class="form-control" name="image" >
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+                <div class="mt-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number"  placeholder="1200" name="listing[price]" class="form-control" required>
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+        
+                <div class="mt-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text"  placeholder="Pune" class="form-control" name="listing[location]" required>
+                    <div class="invalid-feedback">Enter info</div>
+                </div>
+        
+                <div class="mt-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text"  placeholder="India" class="form-control"  name="listing[country]" required>
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+                
+                <button class=" mt-3 mb-3 btn btn-dark btn-add">ADD</button>
+            </div>
+        </div>
+        
+    </form>
+</body>

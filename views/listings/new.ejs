@@ -1,0 +1,46 @@
+<% layout("./Layout/boilerplate.ejs")-%>
+
+    <body>
+        <br><br>
+        <div class="row">
+            <div class="col-5 offset-2">
+                <h3>Create you own spot</h3>
+                <form method="post" action="/listing"  class="needs-validation" enctype="multipart/form-data" novalidate >
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" placeholder="add a catche" name="listing[title]" class="form-control" required>
+                        <div class="valid-feedback">Look's Good</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="listing[description]" id="" cols="10" rows="1" class="form-control" required></textarea>
+                        <div class="invalid-feedback">Please write a valid description</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input  placeholder="1200" name="listing[price]" class="form-control" required>
+                        <div class="invalid-feedback">please select a valid price</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Image</label>
+                        <input type="file" multiple placeholder="img link/URL" name="image" class="form-control" >
+                    </div>
+                    <div class="row ">
+                        <div class="mb-3 col-md">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" placeholder="pune ,Maharastra" name="listing[location]"
+                                class="form-control" required>
+                            <div class="invalid-feedback">please select a valid location</div>
+                        </div>
+                        <div class="mb-3 col-md">
+                            <label for="country" class="form-label">Country</label>
+                            <input type="text" placeholder="India" name="listing[country]" class="form-control" required>
+                            <div class="invalid-feedback">please select the valid country</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-dark add-btn ">Add</button>
+                </form>
+            </div>
+        </div>
+        <script src="../JS/script.js"></script>
+    </body>

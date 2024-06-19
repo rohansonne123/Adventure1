@@ -1,0 +1,369 @@
+<% layout("./Layout/boilerplate.ejs")-%>
+
+    <style>
+        #filters {
+            display: flex;
+
+        }
+
+        .filter {
+            display: inline;
+            justify-content: center;
+            margin-left: 4rem;
+            align-items: center;
+            text-align: center;
+            opacity: 0.7;
+            padding-top: 0;
+
+        }
+
+        #filters a {
+            text-decoration: none;
+            color: black;
+            margin-top: 0;
+            display: inline;
+            justify-content: center;
+            margin-left: 4rem;
+            align-items: center;
+            text-align: center;
+            opacity: 0.7;
+            padding-top: 0;
+        }
+
+        .filter:hover {
+            opacity: 1;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .info-title{
+            display: flex;
+            margin-top: 2rem;
+        }
+        .info{
+            margin-left: 2rem;
+        }
+        .title{
+            text-align: center;
+        }
+        .still-question{
+            display: flex;
+            align-items: center;
+        }
+        .part{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        #sm{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: space-around;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        #sm a{
+            text-decoration: none;
+        }
+        .insta{
+            font-size: xx-large;
+            
+            color: deeppink;
+        }
+        .youtube{
+            color: red;
+            font-size: xx-large;
+        }
+        .social-media p{
+            color: black;
+        }
+        
+    </style>
+    <div id="filters" class=" mb-3">
+        <a href="/Fun">
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>FunTour</p>
+            </div>
+        </a>
+        <a href="/listing">
+            <div class="filter">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Fort</p>
+            </div>
+        </a>
+        <a href="/Agri">
+            <div class="filter">
+                <div><i class="fa-solid fa-tractor"></i></div>
+                <p>AgriTour</p>
+            </div>
+        </a>
+        <a href="/Trending">
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+        </a>
+        <a href="/Camping">
+            <div class="filter">
+                <div><i class="fa-solid fa-campground"></i></div>
+                <p>Camping</p>
+            </div>
+        </a>
+        <a href="/Waterfall">
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain-sun"></i></div>
+                <p>Waterfall</p>
+            </div>
+        </a>
+        <a href="/Hotels">
+            <div class="filter">
+                <div><i class="fa-solid fa-hotel"></i></div>
+                <p>Hotels</p>
+            </div>
+        </a>
+        <a href="/Rooms">
+            <div class="filter">
+                <div><i class="fa-solid fa-bed"></i></div>
+                <p>Rooms</p>
+            </div>
+        </a>
+        
+    </div>
+    <div class="title mt-3 "><h2><b>WELCOME TO WANDERLUST</b></h2></div>
+    <div class="title mt-3 "><h2><b>WanderLust It easy With WanderLust</b></h2></div>
+    
+    <hr>
+    <h3 class="mt-4 mb-4"><b>Top Rated Agri Tourism</b></h3>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <%for(let d of agri){%>
+            <a class="card-link" href="/Agri/<%=d._id%>">
+                <div class="card col" style="width: 20rem;">
+                    <div class="card-img-overlay"></div>
+                    <img src="<%=d.image[0].path%>" class="card-img-top" alt="/Agri">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <b>
+                                <%=d.title%>
+                            </b><br>
+                            &#8377; <%= d.price%>/night
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <%}%>
+    </div>
+    <hr>
+    <h3 class="mt-4 mb-4"><b>Top Rated Forts</b></h3>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <%for(let d of listing){%>
+            <a class="card-link" href="/listing/<%=d._id%>">
+                <div class="card col" style="width: 20rem;">
+                    <div class="card-img-overlay"></div>
+                    <img src="<%=d.image[0].path%>" class="card-img-top" alt="/Agri">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <b>
+                                <%=d.title%>
+                            </b><br>
+                            &#8377; <%= d.price%>/night
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <%}%>
+    </div>
+    <hr>
+    <h3 class="mt-4 mb-4"><b>Top Rated Fun Places</b></h3>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <%for(let d of fun){%>
+            <a class="card-link" href="/Fun/<%=d._id%>">
+                <div class="card col" style="width: 20rem;">
+                    <div class="card-img-overlay"></div>
+                    <img src="<%=d.image[0].path%>" class="card-img-top" alt="/Agri">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <b>
+                                <%=d.title%>
+                            </b><br>
+                            &#8377; <%= d.price%>/night
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <%}%>
+    </div>
+    <hr>
+    <h3 class="mt-4 mb-4"><b>Top Rated Waterfalls</b></h3>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <%for(let d of waterfall){%>
+            <a class="card-link" href="/Waterfall/<%=d._id%>">
+                <div class="card col" style="width: 20rem;">
+                    <div class="card-img-overlay"></div>
+                    <img src="<%=d.image[0].path%>" class="card-img-top" alt="/Agri">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <b>
+                                <%=d.title%>
+                            </b><br>
+                            &#8377; <%= d.price%>/night
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <%}%>
+    </div>
+    <hr>
+    <h3 class="mt-4 mb-4"><b>Top Rated Camping</b></h3>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <%for(let d of camping){%>
+            <a class="card-link" href="/Camping/<%=d._id%>">
+                <div class="card col" style="width: 20rem;">
+                    <div class="card-img-overlay"></div>
+                    <img src="<%=d.image[0].path%>" class="card-img-top" alt="/Agri">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <b>
+                                <%=d.title%>
+                            </b><br>
+                            &#8377; <%= d.price%>/night
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <%}%>
+    </div>
+    <hr>
+    <div class="row mt-5 ">
+        <div class="question col-3"><h2><b>Most Frequently Asked Questions</b></h2></div>
+        <div class="accordion accordion-flush offset-3 col-6" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Accordion Item #1
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                        the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Accordion Item #2
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                        the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
+                        this being filled with some actual content.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                        the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
+                        exciting happening here in terms of content, but just filling up the space to make it look, at
+                        least at first glance, a bit more representative of how this would look in a real-world
+                        application.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Accordion Item #1
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                        the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Accordion Item #2
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                        the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
+                        this being filled with some actual content.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                        the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
+                        exciting happening here in terms of content, but just filling up the space to make it look, at
+                        least at first glance, a bit more representative of how this would look in a real-world
+                        application.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h4 class="part mt-4"><b>BE A PART OF COMMUNITY!</b></h4>
+        <div id="sm" class="mt-4">
+            <a href="/Fun">
+                <div class="social-media">
+                    <div><i class="insta fa-brands fa-square-instagram"></i></div>
+                    <p>Instagram</p>
+                </div>
+            </a>
+            <a href="/listing">
+                <div class="social-media">
+                    <div><i class="youtube fa-brands fa-youtube"></i></div>
+                    <p>Youtube</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <hr>
+    <div class="still-question mb-6">
+        <div>
+            <img src="https://assets-global.website-files.com/63fdd12e039baae5649b7b70/64119a0af3230a027bd1c3e4_Cover_-Everything-you-need-to-know-about-using-one-email-account-with-multiple-users-2000x1333.webp" style="height: 500px; width: 80vh;" alt="">
+        </div>
+        <div>
+            <h3><p><b>Still Have Questions?</b></p></h3>
+            <p>Get answers from an experienced Superhost near you.</p>
+            <p> +91 9309169713</p>
+            <div class="f-info-social ms-3">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-linkedin"></i>
+            </div>
+
+        </div>
+    </div>
+    
+
+    

@@ -1,0 +1,107 @@
+<% layout("./Layout/boilerplate.ejs")-%>
+<style>
+    #filters{
+        display: flex;
+
+    }
+    .filter{
+        display: inline;
+        justify-content: center;
+        margin-left: 4rem;
+        align-items: center;
+        text-align: center;
+        opacity: 0.7;
+        padding-top: 0;
+        
+    }
+    #filters a{
+        text-decoration: none;
+        color: black;
+        margin-top: 0;
+        display: inline;
+        justify-content: center;
+        margin-left: 4rem;
+        align-items: center;
+        text-align: center;
+        opacity: 0.7;
+        padding-top: 0;
+    }
+    .filter:hover{
+        opacity: 1;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    
+</style>
+ <div id="filters" class=" mb-3">
+    <a href="/Fun">
+        <div class="filter">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>FunTour</p>
+         </div>
+    </a>
+    <a href="/Listing">
+     <div class="filter">
+        <div><i class="fa-brands fa-fort-awesome"></i></div>
+        <p>Fort</p>
+     </div>
+    </a>
+    <a href="/Agri">
+        <div class="filter">
+            <div><i class="fa-solid fa-tractor"></i></div>
+            <p>AgriTour</p>
+         </div>
+    </a>
+     <a href="/Trending">
+        <div class="filter">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+         </div>
+     </a>
+     <a href="/Camping">
+        <div class="filter">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+         </div>
+     </a>
+     <a href="/Waterfall">
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain-sun"></i></div>
+            <p>Waterfall</p>
+         </div>
+     </a>
+     <a href="/Hotels">
+        <div class="filter">
+            <div><i class="fa-solid fa-hotel"></i></div>
+            <p>Hotels</p>
+         </div>
+     </a>
+     <a href="/Rooms">
+        <div class="filter">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </div>
+     </a>
+     
+        <a class="nav-link mt-3" aria-current="page" href="/Fun/new">Add new adventure spots</a>
+    
+     
+ </div>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <%for(let d of allListing){%>
+            <a class="card-link" href="/Fun/<%=d._id%>">
+                <div class="card col" style="width: 20rem;">
+                    <div class="card-img-overlay"></div>
+                    <img src="<%=d.image[0].path%>" class="card-img-top" alt="/Fun">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <b>
+                                <%=d.title%>
+                            </b><br>
+                            &#8377; <%= d.price%>/night
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <%}%>
+    </div>
