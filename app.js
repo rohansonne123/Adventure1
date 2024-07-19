@@ -184,6 +184,7 @@ app.use((err,req,res,next)=>{
     let {statusCode=501,message="page not found"}=err;
     res.render("error.ejs",{message});
 })
-app.listen(8080,()=>{
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0',()=>{
     console.log("connected to port 8080");
 })
