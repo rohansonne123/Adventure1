@@ -66,7 +66,7 @@ module.exports.updateput=async(req,res)=>{
     }
     
     
-    const updatedListing=await dataCamping.findByIdAndUpdate(id,{...req.body.list} );
+    const updatedListing=await dataCamping.findByIdAndUpdate(id,{...req.body.listing} );
     if (req.files && req.files.length > 0) {
         const newImages = req.files.map(file => ({
             path: file.path,

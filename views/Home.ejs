@@ -36,13 +36,7 @@
             text-decoration: underline;
         }
 
-        .row {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+        
         .info-title{
             display: flex;
             margin-top: 2rem;
@@ -55,7 +49,7 @@
         }
         .still-question{
             display: flex;
-            align-items: center;
+            
         }
         .part{
             display: flex;
@@ -85,9 +79,92 @@
         .social-media p{
             color: black;
         }
-        
+        .visit{
+            display: flex;
+            justify-content: space-around;
+        }
+        .title1{
+            
+            text-align: center;
+
+        }
+        .question{
+            display: flex;
+            
+            align-items: center;
+        }
+        /* .social1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } */
+        /* Large devices (desktops, 1200px and up) */
+
+
+        @media (max-width: 767px) {
+    #filters {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Three filters per row */
+        gap: 1rem; /* Space between grid items */
+    }
+    
+    .filter, #filters a {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+         /* Add padding for better touch targets */
+    }
+    .still-question{
+            display: inline;
+            
+        }
+
+    
+    
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+    #filters {
+        justify-content: space-around; /* Spread filters evenly */
+        display: flex; /* Use flex for tablets and above */
+    }
+
+    .filter, #filters a {
+        font-size: 1.2rem;
+        margin: 0.5rem 1rem;
+    }
+
+    .row-cols-lg-3 .card,
+    .row-cols-md-2 .card,
+    .row-cols-sm-1 .card {
+        width: 45%;
+        margin: 1rem; /* Space between cards */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #filters {
+        justify-content: space-between; /* Spread filters to the edges */
+        display: flex; /* Use flex for desktops and above */
+    }
+
+    .filter, #filters a {
+        font-size: 1.2rem;
+        margin: 0.5rem 2rem;
+    }
+
+    
+}
+
     </style>
     <div id="filters" class=" mb-3">
+        <a href="/">
+            <div class="filter">
+                <div><i class="fa-solid fa-house-user"></i></div>
+                <p>Home</p>
+            </div>
+        </a>
         <a href="/Fun">
             <div class="filter">
                 <div><i class="fa-solid fa-fire"></i></div>
@@ -106,12 +183,7 @@
                 <p>AgriTour</p>
             </div>
         </a>
-        <a href="/Trending">
-            <div class="filter">
-                <div><i class="fa-solid fa-fire"></i></div>
-                <p>Trending</p>
-            </div>
-        </a>
+        
         <a href="/Camping">
             <div class="filter">
                 <div><i class="fa-solid fa-campground"></i></div>
@@ -124,13 +196,13 @@
                 <p>Waterfall</p>
             </div>
         </a>
-        <a href="/Hotels">
+        <a href="/working">
             <div class="filter">
                 <div><i class="fa-solid fa-hotel"></i></div>
                 <p>Hotels</p>
             </div>
         </a>
-        <a href="/Rooms">
+        <a href="/working">
             <div class="filter">
                 <div><i class="fa-solid fa-bed"></i></div>
                 <p>Rooms</p>
@@ -138,15 +210,37 @@
         </a>
         
     </div>
-    <div class="title mt-3 "><h2><b>WELCOME TO WANDERLUST</b></h2></div>
-    <div class="title mt-3 "><h2><b>WanderLust It easy With WanderLust</b></h2></div>
+    <div class="title mt-3 "><h2><b>WELCOME TO ADVENTURE</b></h2></div>
+    <div id="element" class="title mt-3 " style="height: 2rem;"><h2><b>ADVENTURE IT EASY WITH ADVENTURE</b></h2></div>
+    <span id="element"></span>
+    <!-- (14, 200, 228, 0.136); -->
+    <div class="mt-4 mb-3   " style="background-color: blueviolet; ">
+        <br>
+        <h4 class="title1 " style="color: white; "><b>INDIA'S MOST LOVED TOURISM COMMUNITY ❤️</b></h4>
+        <div class="visit mt-4 mb-3">
+        <div class=" listing-card mb-3 col-sm-2 offset-sm-0 col-md-10 offset-md-1 col-lg-5 offset-lg-0 ms-2 " style="background-color: rgb(143, 63, 217);">   
+            <div class="card-body  mb-3">
+                <h5 class="card-title" style="text-align: center; color: white;">Total Visitors</h5>
+                <p class="card-text " style="text-align: center; color: white;"><%=count2%></p>
+                
+            </div>
+        </div>
+        <div class=" listing-card mb-3 col-sm-2 offset-sm-0 col-md-10 offset-md-1 col-lg-5 offset-lg-0 ms-2 " style="background-color: rgb(143, 63, 217);">   
+            <div class="card-body  mb-3" >
+                <h5 class="card-title" style="text-align: center; color: white;">Registered User</h5>
+                <p class="card-text" style="text-align: center; color: white;"><%=count3%></p>
+                
+            </div>
+        </div>
+    </div>
+    </div>
     
-    <hr>
     <h3 class="mt-4 mb-4"><b>Top Rated Agri Tourism</b></h3>
+   
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
         <%for(let d of agri){%>
-            <a class="card-link" href="/Agri/<%=d._id%>">
-                <div class="card col" style="width: 20rem;">
+            <a class="card-link  " href="/Agri/<%=d._id%>">
+                <div class="card col " style="width: 20rem;">
                     <div class="card-img-overlay"></div>
                     <img src="<%=d.image[0].path%>" class="card-img-top" alt="/Agri">
                     <div class="card-body">
@@ -154,19 +248,21 @@
                             <b>
                                 <%=d.title%>
                             </b><br>
-                            &#8377; <%= d.price%>/night
+                            <%= d.location%>
                         </p>
                     </div>
                 </div>
             </a>
             <%}%>
     </div>
+
     <hr>
     <h3 class="mt-4 mb-4"><b>Top Rated Forts</b></h3>
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
         <%for(let d of listing){%>
+           
             <a class="card-link" href="/listing/<%=d._id%>">
-                <div class="card col" style="width: 20rem;">
+                <div class="card col" >
                     <div class="card-img-overlay"></div>
                     <img src="<%=d.image[0].path%>" class="card-img-top" alt="/Agri">
                     <div class="card-body">
@@ -174,11 +270,12 @@
                             <b>
                                 <%=d.title%>
                             </b><br>
-                            &#8377; <%= d.price%>/night
+                            <%= d.location%>
                         </p>
                     </div>
                 </div>
             </a>
+        
             <%}%>
     </div>
     <hr>
@@ -194,7 +291,7 @@
                             <b>
                                 <%=d.title%>
                             </b><br>
-                            &#8377; <%= d.price%>/night
+                            <%= d.location%>
                         </p>
                     </div>
                 </div>
@@ -214,7 +311,7 @@
                             <b>
                                 <%=d.title%>
                             </b><br>
-                            &#8377; <%= d.price%>/night
+                           <%= d.location%>
                         </p>
                     </div>
                 </div>
@@ -225,8 +322,9 @@
     <h3 class="mt-4 mb-4"><b>Top Rated Camping</b></h3>
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
         <%for(let d of camping){%>
+            
             <a class="card-link" href="/Camping/<%=d._id%>">
-                <div class="card col" style="width: 20rem;">
+                <div class="card col" style="width: 100%;">
                     <div class="card-img-overlay"></div>
                     <img src="<%=d.image[0].path%>" class="card-img-top" alt="/Agri">
                     <div class="card-body">
@@ -234,97 +332,85 @@
                             <b>
                                 <%=d.title%>
                             </b><br>
-                            &#8377; <%= d.price%>/night
+                            <%= d.location%>
                         </p>
                     </div>
                 </div>
             </a>
+        
             <%}%>
     </div>
     <hr>
-    <div class="row mt-5 ">
+    <div class="row mt-5  ">
         <div class="question col-3"><h2><b>Most Frequently Asked Questions</b></h2></div>
         <div class="accordion accordion-flush offset-3 col-6" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Accordion Item #1
+                        <b>What is the best time to visit [Destination]?</b>
                     </button>
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                    <div class="accordion-body">The best time to visit [Destination] is typically during the [specific season or months], when the weather is pleasant and many local festivals and events take place.</div>
                 </div>
             </div>
-            <div class="accordion-item">
+            <div class="accordion-item ">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        Accordion Item #2
+                       <b> How can I book a tour/package on your website?</b>
                     </button>
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
-                        this being filled with some actual content.</div>
+                    <div class="accordion-body">To book a tour or package, simply browse our offerings, select your preferred package, and click on the 'Book Now' button. Follow the instructions to complete your booking.</div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        Accordion Item #3
+                        <b>What types of accommodations do you offer?</b>
                     </button>
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
-                        exciting happening here in terms of content, but just filling up the space to make it look, at
-                        least at first glance, a bit more representative of how this would look in a real-world
-                        application.</div>
+                    <div class="accordion-body">We offer a wide range of accommodations including hotels, resorts, guesthouses, and homestays to suit different preferences and budgets.</div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Accordion Item #1
+                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <b>How can I contact customer support?</b>
                     </button>
                 </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"> You can contact our customer support via phone, email, or live chat on our website. Our support team is available [specific hours] to assist you with any inquiries.</div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        Accordion Item #2
+                        data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        <b>Do you have a physical office I can visit?</b>
+
                     </button>
                 </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
-                        this being filled with some actual content.</div>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Yes, our office is located at [address]. Please visit our 'Contact Us' page for office hours and more details.</div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        Accordion Item #3
+                        data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <b>How can I provide feedback about my experience?</b>
                     </button>
                 </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                <div id="flush-collapseSix" class="accordion-collapse collapse"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
-                        exciting happening here in terms of content, but just filling up the space to make it look, at
-                        least at first glance, a bit more representative of how this would look in a real-world
-                        application.</div>
+                    <div class="accordion-body">We value your feedback. You can submit your feedback through our website, via email, or on our social media channels.</div>
                 </div>
             </div>
         </div>
@@ -333,13 +419,13 @@
     <div>
         <h4 class="part mt-4"><b>BE A PART OF COMMUNITY!</b></h4>
         <div id="sm" class="mt-4">
-            <a href="/Fun">
+            <a href="https://www.instagram.com/adventure_maharastra?igsh=MTFoaDlvaHdmM3ZrZg==">
                 <div class="social-media">
                     <div><i class="insta fa-brands fa-square-instagram"></i></div>
                     <p>Instagram</p>
                 </div>
             </a>
-            <a href="/listing">
+            <a href="https://www.youtube.com/@adventure_maharastra">
                 <div class="social-media">
                     <div><i class="youtube fa-brands fa-youtube"></i></div>
                     <p>Youtube</p>
@@ -348,22 +434,34 @@
         </div>
     </div>
     <hr>
-    <div class="still-question mb-6">
-        <div>
-            <img src="https://assets-global.website-files.com/63fdd12e039baae5649b7b70/64119a0af3230a027bd1c3e4_Cover_-Everything-you-need-to-know-about-using-one-email-account-with-multiple-users-2000x1333.webp" style="height: 500px; width: 80vh;" alt="">
-        </div>
-        <div>
+    <div class="still-question  col-sm-4 offset-sm-1 col-md-10 offset-md-1 col-lg-12 offset-lg-1 mt-4 mb-4">
+        
+        
+            <div>
+            <img class="itu7ddv i1cqnm0r i1de1kle dir dir-ltr" aria-hidden="true" alt="" elementtiming="LCP-target" src="https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt6a2935c750dda8a0/6179c6499778eb18575b3c0b/Airbnb-Policy-Web.png" data-original-uri="https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt6a2935c750dda8a0/6179c6499778eb18575b3c0b/Airbnb-Policy-Web.png" style="--dls-liteimage-object-fit: cover; height: 300px; width:400px; border-radius: 2rem;">
+           </div>
+           <div class="ms-3 mt-3">
             <h3><p><b>Still Have Questions?</b></p></h3>
             <p>Get answers from an experienced Superhost near you.</p>
-            <p> +91 9309169713</p>
-            <div class="f-info-social ms-3">
-                <i class="fa-brands fa-square-facebook"></i>
-                <i class="fa-brands fa-square-instagram"></i>
-                <i class="fa-brands fa-linkedin"></i>
+            <p> <b> +91 9309169713 &nbsp;&nbsp;&nbsp;&nbsp; adventure@gmail.com </b></p>
+            <div class="f-info-social social1 ms-6">
+                <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://www.instagram.com/adventure_maharastra?igsh=MTFoaDlvaHdmM3ZrZg=="><i class="fa-brands fa-square-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
             </div>
-
         </div>
+        
     </div>
     
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Load library from the CDN -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
+  <!-- Setup and start animation! -->
+  <script>
+    var typed = new Typed('#element', {
+      strings: ['<h2>ADVENTURE IT EASY WITH ADVENTURE</h2>','<h2>ADVENTURE IT EASY WITH ADVENTURE</h2>'],
+      typeSpeed: 50,
+    });
+  </script>
     

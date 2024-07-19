@@ -12,7 +12,7 @@ body{
 .navbar{
     height: 5rem;
 }
-.fa-regular{
+.main-icon{
     color: #fe424d;
     font-size: 2rem;
 }
@@ -28,6 +28,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    
 }
 
 .f-info-social,.f-info-links{
@@ -54,7 +55,7 @@ body{
 }
 .nav-search{
     border-radius: 5px;
-    padding:0 25px 0 25px !important;
+    
 }
 /* cards */
 .card{
@@ -108,12 +109,14 @@ body{
        width: 100vh; }
 
 .carousel-inner{
-    height: 300px !important;
+    height: 20rem !important;
         object-fit: cover !important;
         
         border-radius: 1rem !important;
+        width: 100%;
         
     }
 .li-link{
     text-decoration: none !important;
 }
+

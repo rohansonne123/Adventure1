@@ -87,7 +87,7 @@ router.post("/:id/hotels",upload,wrapAsync(async(req,res)=>{
     }));
     
     newlisting.owner=req.user._id;
-    // newlisting.geometry={ type: 'Point', coordinates: [ -155.134023, 19.698738 ]};
+    newlisting.geometry=response.body.features[0].geometry;
     listing.Hotel.push(newlisting);
     await newlisting.save();
     await listing.save();

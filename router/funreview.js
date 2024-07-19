@@ -24,8 +24,8 @@ const validatereview=(req,res,next)=>{
 }
 
 
-router.post("funreview",isloggedin,wrapAsync(funreviewController.funreviewPost));
-router.delete("funreview/:reviewId",isloggedin,isAuthor,wrapAsync(funreviewController.funreviewDelete));
+router.post("/funreview",isloggedin,wrapAsync(funreviewController.funreviewPost));
+router.delete("/funreview/:reviewId",isloggedin,isAuthor,wrapAsync(funreviewController.funreviewDelete));
 
 router.post("/rooms/:roomid/review",isloggedin,wrapAsync(async(req,res,next)=>{
     let {id,roomid}=req.params;
@@ -58,7 +58,7 @@ router.post("/hotels/:hotelid/reviews",isloggedin,wrapAsync(async(req,res,next)=
 
     await newreview.save();
     await listing.save();
-    req.flash("sucess","added review sucessfully")
+    req.flash("success","added review sucessfully")
     res.redirect(`/Fun/${id}/hotels/${hotelid}`);
 }))
 

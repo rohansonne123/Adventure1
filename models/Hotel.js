@@ -37,6 +37,9 @@ const listingSchema=new schema({
     youtube:[{
        type:String,
     }],
+    mobnumber:{
+        type:Number,
+    },
 
 })
 listingSchema.post("findOneAndDelete",async(listing)=>{

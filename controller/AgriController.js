@@ -42,6 +42,7 @@ module.exports.showRoute=async(req,res)=>{
         req.flash("error","listing you trying to access is not there");
         return res.redirect(`/Agri/${id}`);
     }
+    
     res.render("./Agri/Show.ejs",{details});
 }
 
@@ -63,7 +64,7 @@ module.exports.updateRoute=async(req,res)=>{
 
 module.exports.updateput=async(req,res)=>{
     let {id}=req.params;
-    const updatedListing=await dataAgri.findByIdAndUpdate(id,{...req.body.list} );
+    const updatedListing=await dataAgri.findByIdAndUpdate(id,{...req.body.listing} );
     if (req.files && req.files.length > 0) {
         const newImages = req.files.map(file => ({
             path: file.path,

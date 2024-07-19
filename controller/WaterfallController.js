@@ -64,7 +64,7 @@ module.exports.updateput=async(req,res)=>{
         throw new ExpressError(401,"please add valid info");
     }
     
-    const updatedListing=await data.findByIdAndUpdate(id,{...req.body.list} );
+    const updatedListing=await dataWaterfall.findByIdAndUpdate(id,{...req.body.listing} );
     if (req.files && req.files.length > 0) {
         const newImages = req.files.map(file => ({
             path: file.path,

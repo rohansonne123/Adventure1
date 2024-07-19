@@ -58,7 +58,10 @@ roundRate:{
   type:Number,
   min:1,
   max:5,
-}
+},
+mobnumber:{
+  type:Number,
+},
 });
 
 listingSchema.post("findOneAndDelete", async (listing) => {

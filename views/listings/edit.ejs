@@ -2,8 +2,8 @@
 
     <body>
         <div class="row">
-            <div class="col-6 offset-2 mt-3">
-                <h3>Edit The Given Spot</h3>
+            <div class="col-sm-4 offset-sm-1 col-md-10 offset-md-1 col-lg-6 offset-lg-3">
+                <h3><b>Edit The Given Spot</b></h3>
                 <form method="post" action="/listing/<%=editData._id%>?_method=PUT"  novalidate class="needs-validation" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-dark add-btn">submit</button>
+                    <button class="btn btn-dark add-btn mb-2">Update</button>
                 </form>
             </div>
         </div>

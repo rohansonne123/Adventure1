@@ -28,7 +28,7 @@ router.delete("/review/:reviewId",isloggedin,isAuthor,wrapAsync(reviewController
 // router.post("/",isloggedin,wrapAsync(funreviewController.funreviewPost));
 // router.delete("/:reviewId",isloggedin,isAuthor,wrapAsync(funreviewController.funreviewDelete));
 
-router.post("/rooms/:roomid/review",isloggedin,wrapAsync(async(req,res,next)=>{
+router.post("/rooms/:roomid/reviews",isloggedin,wrapAsync(async(req,res,next)=>{
     let {id,roomid}=req.params;
      const listing= await ListingRooms.findById(roomid);
      const newreview=new review(req.body.review);
@@ -41,7 +41,7 @@ router.post("/rooms/:roomid/review",isloggedin,wrapAsync(async(req,res,next)=>{
 }))
 
 //delete review route
-router.delete("/rooms/:roomid/review/:reviewId",isloggedin,isAuthor,wrapAsync(async(req,res)=>{
+router.delete("/rooms/:roomid/reviews/:reviewId",isloggedin,isAuthor,wrapAsync(async(req,res)=>{
     let {id,roomid,reviewId}=req.params;
     await review.findByIdAndDelete(reviewId);
     await ListingRooms.findByIdAndUpdate(roomid,{$pull:{review:reviewId}});
@@ -53,17 +53,18 @@ router.post("/hotels/:hotelid/review",isloggedin,wrapAsync(async(req,res,next)=>
     let {id,hotelid}=req.params;
      const listing= await ListingHotels.findById(hotelid);
      const newreview=new review(req.body.review);
+     console.log(newreview);
      newreview.author=req.user._id;
      listing.review.push(newreview);
-
+     req.flash("success","added review sucessfully");
     await newreview.save();
     await listing.save();
     res.redirect(`/listing/${id}/hotels/${hotelid}`);
 }))
 
 //delete review route
-router.delete("/hotels/:hotelid/review/:reviewId",isloggedin,isAuthor,wrapAsync(async(req,res)=>{
-    let {hotelid,reviewId}=req.params;
+router.delete("/hotels/:hotelid/reviews/:reviewId",isloggedin,isAuthor,wrapAsync(async(req,res)=>{
+    let {id,hotelid,reviewId}=req.params;
     await review.findByIdAndDelete(reviewId);
     await ListingHotels.findByIdAndUpdate(hotelid,{$pull:{review:reviewId}});
     req.flash("success","deleted review sucessfully");

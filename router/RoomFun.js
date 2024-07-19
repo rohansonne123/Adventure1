@@ -83,7 +83,7 @@ router.post("/:id/rooms",upload,wrapAsync(async(req,res)=>{
     }));
     
     newlisting.owner=req.user._id;
-    // newlisting.geometry={ type: 'Point', coordinates: [ -155.134023, 19.698738 ]};
+    newlisting.geometry=response.body.features[0].geometry;
     listing.Room.push(newlisting);
     await newlisting.save();
     await listing.save();

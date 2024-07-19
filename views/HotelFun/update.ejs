@@ -3,9 +3,9 @@
     
     
         <div class="row">
-            <div class="col-6 offset-3">
+            <div class="col-sm-4 offset-sm-1 col-md-10 offset-md-1 col-lg-6 offset-lg-3 mt-3">
                 <form method="POST" action="/Fun/<%=id%>/hotels/<%=listing._id%>?_method=PUT" novalidate enctype="multipart/form-data" class="needs-validation">
-                <h2>Add a new Listing here</h2>
+                <h2>update your Hotel info</h2>
                 <div class="mt-3">
                     <label for="title" class="form-label">Title</label>
                     <input type="text" value="<%=listing.title%>" class="form-control" name="list[title]" required>
@@ -26,7 +26,16 @@
                     <input type="file" value="<%=listing.image.path%>" multiple class="form-control" name="image">
                     <div class="valid-feedback">Looks good</div>
                 </div>
-                
+                <div class="mt-3">
+                    <label for="insta" class="form-label">Instagram Link</label>
+                    <textarea name="list[description]"  class="form-control" required><%=listing.insta%></textarea>
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+                <div class="mt-3">
+                    <label for="youtube" class="form-label">Youtube Link</label>
+                    <textarea name="list[youtube]"  class="form-control" required><%=listing.youtube%></textarea>
+                    <div class="valid-feedback">Looks good</div>
+                </div>
                 <div class="mt-3">
                     <label for="price" class="form-label">Price</label>
                     <input type="number"value="<%=listing.price%>" name="list[price]" class="form-control" required>
@@ -45,7 +54,7 @@
                     <div class="valid-feedback">Looks good</div>
                 </div>
                 
-                <button class=" mt-3 mb-3 btn btn-dark btn-edit" >EDIT</button>
+                <button class=" mt-3 mb-3 btn btn-dark add-btn mb-3" >Update</button>
             </form>
             </div>
         </div>

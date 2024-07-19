@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const dataFun = require("./models/Fun.js");
 const data=require("./models/data.js");
 const dataAgri=require("./models/Agri.js");
@@ -83,22 +83,4 @@ module.exports.isOwnerWaterfall=async(req,res,next)=>{
     }
     next();
 }
-=======
 
-module.exports.isloggedin=(req,res,next)=>{
-    console.log(req.path);
-    if(!req.isAuthenticated()){
-        req.session.redirecturl=req.originalUrl;
-       req.flash("success","please login to the wanderlust");
-       return res.redirect("/login");
-    }
-    next();
-}
-
-module.exports.urlredirect=(req,res,next)=>{
-   if(req.session.redirecturl){
-    res.locals.urlpath=req.session.redirecturl;
-   }
-   next();
-}
->>>>>>> aace1cf54c0a401ff4d8b62faeae9eaea6702b7e

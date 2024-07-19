@@ -1,0 +1,210 @@
+<% layout("./Layout/boilerplate.ejs")-%>
+
+    <style>
+        #filters {
+            display: flex;
+
+        }
+
+        .filter {
+            display: inline;
+            justify-content: center;
+            margin-left: 4rem;
+            align-items: center;
+            text-align: center;
+            opacity: 0.7;
+            padding-top: 0;
+
+        }
+
+        #filters a {
+            text-decoration: none;
+            color: black;
+            margin-top: 0;
+            display: inline;
+            justify-content: center;
+            margin-left: 4rem;
+            align-items: center;
+            text-align: center;
+            opacity: 0.7;
+            padding-top: 0;
+        }
+
+        .filter:hover {
+            opacity: 1;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        
+        .info-title{
+            display: flex;
+            margin-top: 2rem;
+        }
+        .info{
+            margin-left: 2rem;
+        }
+        .title{
+            text-align: center;
+        }
+        .still-question{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .part{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        #sm{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: space-around;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        #sm a{
+            text-decoration: none;
+        }
+        .insta{
+            font-size: xx-large;
+            
+            color: deeppink;
+        }
+        .youtube{
+            color: red;
+            font-size: xx-large;
+        }
+        .social-media p{
+            color: black;
+        }
+        .visit{
+            display: flex;
+            justify-content: space-around;
+        }
+        .title1{
+            
+            text-align: center;
+
+        }
+        /* .social1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } */
+        /* Large devices (desktops, 1200px and up) */
+
+
+        @media (max-width: 767px) {
+    #filters {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Three filters per row */
+        gap: 1rem; /* Space between grid items */
+    }
+    
+    .filter, #filters a {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+         /* Add padding for better touch targets */
+    }
+
+    
+    
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    #filters {
+        justify-content: space-around; /* Spread filters evenly */
+        display: flex; /* Use flex for tablets and above */
+    }
+
+    .filter, #filters a {
+        font-size: 1.2rem;
+        margin: 0.5rem 1rem;
+    }
+
+    .row-cols-lg-3 .card,
+    .row-cols-md-2 .card,
+    .row-cols-sm-1 .card {
+        width: 45%;
+        margin: 1rem; /* Space between cards */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #filters {
+        justify-content: space-between; /* Spread filters to the edges */
+        display: flex; /* Use flex for desktops and above */
+    }
+
+    .filter, #filters a {
+        font-size: 1rem;
+        margin: 0.5rem 2rem;
+    }
+
+    
+}
+
+    </style>
+    <div id="filters" class=" mb-3">
+        <a href="/">
+            <div class="filter">
+                <div><i class="fa-solid fa-house-user"></i></div>
+                <p>Home</p>
+            </div>
+        </a>
+        <a href="/Fun">
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>FunTour</p>
+            </div>
+        </a>
+        <a href="/listing">
+            <div class="filter">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Fort</p>
+            </div>
+        </a>
+        <a href="/Agri">
+            <div class="filter">
+                <div><i class="fa-solid fa-tractor"></i></div>
+                <p>AgriTour</p>
+            </div>
+        </a>
+        
+        <a href="/Camping">
+            <div class="filter">
+                <div><i class="fa-solid fa-campground"></i></div>
+                <p>Camping</p>
+            </div>
+        </a>
+        <a href="/Waterfall">
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain-sun"></i></div>
+                <p>Waterfall</p>
+            </div>
+        </a>
+        <a href="/Hotels">
+            <div class="filter">
+                <div><i class="fa-solid fa-hotel"></i></div>
+                <p>Hotels</p>
+            </div>
+        </a>
+        <a href="/Rooms">
+            <div class="filter">
+                <div><i class="fa-solid fa-bed"></i></div>
+                <p>Rooms</p>
+            </div>
+        </a>
+        
+    </div>
+    <div class="col-sm-4 offset-sm-1 col-md-10 offset-md-1 col-lg-6 offset-lg-3">
+        <div class="alert alert-primary" role="alert">
+            Currently working on this,we will update soon <br>
+            Please Explore Another content on website
+          </div>
+    </div>

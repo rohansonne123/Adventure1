@@ -3,8 +3,8 @@
     <body>
         <br><br>
         <div class="row">
-            <div class="col-5 offset-2">
-                <h3>Create you own spot</h3>
+            <div class="col-sm-4 offset-sm-1 col-md-10 offset-md-1 col-lg-6 offset-lg-3">
+                <h3><b>Create your own spot</b></h3>
                 <form method="post" action="/Camping"  class="needs-validation" enctype="multipart/form-data" novalidate >
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
@@ -25,6 +25,16 @@
                         <label for="image" class="form-label">Image</label>
                         <input type="file" multiple placeholder="img link/URL" name="image" class="form-control" >
                     </div>
+                    <div class="mb-3">
+                        <label for="insta" class="form-label">Instagram Link</label>
+                        <textarea name="listing[insta]" id="" cols="10" rows="1" class="form-control" required></textarea>
+                        <div class="invalid-feedback">Please write a valid description</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="youtube" class="form-label">Youtube Link</label>
+                        <textarea name="listing[youtube]" id="" cols="10" rows="1" class="form-control" required></textarea>
+                        <div class="invalid-feedback">Please write a valid description</div>
+                    </div>
                     <div class="row ">
                         <div class="mb-3 col-md">
                             <label for="location" class="form-label">Location</label>
@@ -38,7 +48,7 @@
                             <div class="invalid-feedback">please select the valid country</div>
                         </div>
                     </div>
-                    <button class="btn btn-dark add-btn ">Add</button>
+                    <button class="btn btn-dark add-btn mb-3">Add</button>
                 </form>
             </div>
         </div>

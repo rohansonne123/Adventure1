@@ -1,69 +1,64 @@
 <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/Listing"><i class="fa-regular fa-compass"></i></a>
+    <a class="navbar-brand" href="/"><i class="main-icon fa-solid fa-person-walking-luggage"></i></a>
     <div class="navbar-nav">
-      <a class="nav-link " aria-current="page" href="/">Adventure</a>
+      <a class="nav-link " aria-current="page" href="/"><b>Adventure</b></a>
     </div>
     
    
-    <%if(currPath=="/listing"){%>
-      <div class="d-flex navbar-nav ms-auto">
-        <div class="container-fluid btn-search">
+    <%if(currPath=="/listing" || currPath=="/listing/search"){%>
+      <div class="col-5 offset-0  btn-search col-sm-4 offset-sm-0 col-lg-4 offset-lg-2 ">
+        
           <form method="GET" action="/listing/search" class="d-flex" role="search">
-            <input class=" form-control me-2" name="query" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success " type="submit"><i
-                class="fa-solid fa-magnifying-glass"></i>Search</button>
+            <input class="nav-search form-control " name="query" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success ms-2" type="submit">Search</button>
           </form>
-        </div>
+        
       </div>
 
        
       
-    <%}else if(currPath=="/Agri"){%>
-      <div class="d-flex navbar-nav ms-auto">
-        <div class="container-fluid btn-search">
+    <%}else if(currPath=="/Agri" || currPath=="/Agri/search"){%>
+      <div class="col-5 offset-0  btn-search col-sm-4 offset-sm-0 col-lg-4 offset-lg-2 ">
+        
           <form method="GET" action="/Agri/search" class="d-flex" role="search">
             <input class="nav-search form-control me-2" name="query" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success " type="submit"><i
-                class="fa-solid fa-magnifying-glass"></i>Search</button>
+            <button class="btn btn-outline-success " type="submit">Search</button>
           </form>
-        </div>
+        
       </div>
       
       
-    <%}else if(currPath=="/Fun"){%>
-      <div class="d-flex navbar-nav ms-auto">
-        <div class="container-fluid btn-search">
+    <%}else if(currPath=="/Fun" || currPath=="/Fun/search"){%>
+      <div class="col-5 offset-0  btn-search col-sm-4 offset-sm-0 col-lg-4 offset-lg-2 ">
+        
           <form method="GET" action="/Fun/search" class="d-flex" role="search">
             <input class="nav-search form-control me-2" name="query" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success " type="submit"><i
-                class="fa-solid fa-magnifying-glass"></i>Search</button>
+            <button class="btn btn-outline-success " type="submit">Search</button>
           </form>
-        </div>
+        
       </div>
       
       
-    <%}else if(currPath=="/Waterfall"){%>
-      <div class="d-flex navbar-nav ms-auto">
-        <div class="container-fluid btn-search">
+    <%}else if(currPath=="/Waterfall" || currPath=="/Waterfall/search"){%>
+      <div class="col-6 offset-0  btn-search col-sm-4 offset-sm-0 col-lg-4 offset-lg-2">
+        
           <form method="GET" action="/Waterfall/search" class="d-flex" role="search">
             <input class="nav-search form-control me-2" name="query" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success " type="submit"><i
-                class="fa-solid fa-magnifying-glass"></i>Search</button>
+            <button class="btn btn-outline-success " type="submit">Search</button>
           </form>
-        </div>
+        
       </div>
       
       
-    <%}else if(currPath=="/Camping"){%>
-      <div class="d-flex navbar-nav ms-auto">
-        <div class="container-fluid btn-search">
+    <%}else if(currPath=="/Camping" || currPath=="/Camping/search"){%>
+      <div class="col-6 offset-0  btn-search col-sm-4 offset-sm-0 col-lg-4 offset-lg-2 ">
+        
           <form method="GET" action="/Camping/search" class="d-flex" role="search">
             <input class="nav-search form-control me-2" name="query" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success " type="submit"><i
-                class="fa-solid fa-magnifying-glass"></i>Search</button>
+            <button class="btn btn-outline-success " type="submit">Search</button>
           </form>
-        </div>
+        
       </div>
       
     <%}%>
@@ -82,54 +77,57 @@
           </form>
         </div>
       </div> -->
+      <div class="collapse sticky-top navbar-light bg-light navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
-        <%if(currPath=="/listing"){%>
+        <%if(currPath=="/listing" || currPath=="/listing/search"){%>
           
     
-            <div class="navbar-nav ms-auto">
-              <a class="nav-link " aria-current="page" href="/listing/new">Add new adventure spots</a>
-            </div>
+            
+              <a class="nav-link ml-auto" aria-current="page" href="/listing/new">Add new adventure spots</a>
+            
           
-        <%}else if(currPath=="/Agri"){%>
-          
-          
-          <div class="navbar-nav ms-auto">
-            <a class="nav-link " aria-current="page" href="/Agri/new">Add new adventure spots</a>
-          </div>
-        <%}else if(currPath=="/Fun"){%>
-          
-          <div class="navbar-nav ms-auto">
-            <a class="nav-link " aria-current="page" href="/Fun/new">Add new adventure spots</a>
-          </div>
-        <%}else if(currPath=="/Waterfall"){%>
+        <%}else if(currPath=="/Agri" || currPath=="/Agri/search"){%>
           
           
-          <div class="navbar-nav ms-auto">
-            <a class="nav-link " aria-current="page" href="/Waterfall/new">Add new adventure spots</a>
-          </div>
-        <%}else if(currPath=="/Camping"){%>
           
-          <div class="navbar-nav ms-auto">
-            <a class="nav-link " aria-current="page" href="/Camping/new">Add new adventure spots</a>
-          </div>
+            <a class="nav-link ml-auto" aria-current="page" href="/Agri/new">Add new adventure spots</a>
+          
+        <%}else if(currPath=="/Fun" || currPath=="/Fun/search"){%>
+          
+          
+            <a class="nav-link ml-auto" aria-current="page" href="/Fun/new">Add new adventure spots</a>
+          
+        <%}else if(currPath=="/Waterfall" || currPath=="/Waterfall/search"){%>
+          
+          
+          
+            <a class="nav-link ml-auto" aria-current="page" href="/Waterfall/new">Add new adventure spots</a>
+          
+        <%}else if(currPath=="/Camping" || currPath=="/Camping/search"){%>
+          
+          
+            <a class="nav-link ml-auto" aria-current="page" href="/Camping/new">Add new adventure spots</a>
+          
         <%}%>
+        
         <% if(!userLoggedin){%>
-          <form method="get" action="/signUp">
-            <button class="ms-3 btn btn-success">signUp</button>
-          </form>
           <form method="get" action="/login">
-            <button class="ms-3 btn btn-success">login</button>
+            <button class="ms-3 mt-1 me-2 btn btn-success">login</button>
           </form>
+          <form method="get" action="/signUp">
+            <button class="ms-3 btn btn-success mt-1">signUp</button>
+          </form>
+          
           <!-- <a class="nav-link " href="/signUp">signUp</a> -->
           <!-- <a class="nav-link" href="/login">login</a> -->
           <% } %>
             <%if(userLoggedin){%>
               <form method="get" action="/logout">
-                <button class="ms-3 btn add-btn">Logout</button>
+                <button class="ms-2 me-2 btn add-btn">Logout</button>
               </form>
               <!-- <a class="nav-link" href="/logout">logout</a> -->
               <%}%>
-
+          
       </div>
     </div>
   </div>

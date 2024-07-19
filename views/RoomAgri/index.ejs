@@ -1,40 +1,105 @@
 <% layout("./layout/boilerplate.ejs")%>
 <body>
     <style>
-        #filters{
-            display: flex;
-    
-        }
-        .filter{
-            display: inline;
-            justify-content: center;
-            margin-left: 4rem;
-            align-items: center;
-            text-align: center;
-            opacity: 0.7;
-            padding-top: 0;
-            
-        }
-        #filters a{
-            text-decoration: none;
-            color: black;
-            margin-top: 0;
-            display: inline;
-            justify-content: center;
-            margin-left: 4rem;
-            align-items: center;
-            text-align: center;
-            opacity: 0.7;
-            padding-top: 0;
-        }
-        .filter:hover{
-            opacity: 1;
-            cursor: pointer;
-            text-decoration: underline;
-        }
+   
+        /* Base styles */
+ body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ #filters{
+         display: flex;
+ 
+     }
+     .filter{
+         display: inline;
+         justify-content: center;
+         margin-left: 4rem;
+         align-items: center;
+         text-align: center;
+         opacity: 0.7;
+         padding-top: 0;
+         font-size: 1rem;
+         
+     }
+     #filters a{
+         text-decoration: none;
+         color: black;
+         margin-top: 0;
+         display: inline;
+         justify-content: center;
+         margin-left: 4rem;
+         align-items: center;
+         text-align: center;
+         opacity: 0.7;
+         padding-top: 0;
+         font-size: 1rem;
+     }
+     .filter:hover{
+         opacity: 1;
+         cursor: pointer;
+         text-decoration: underline;
+     }
+ 
+ @media (max-width: 1200px) {
+         .row {
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: center;
+         }
+     }
+     @media (max-width: 992px) {
+         .filter {
+             margin-left: 2rem;
+             margin-right: 2rem;
+         }
+         .filter, #filters a {
+        font-size: 1.2rem;
+        margin: 0.5rem 1rem;
+    }
+     }
+     @media (max-width: 768px) {
+         #filters {
+             flex-direction: column;
+         }
+         .filter {
+             margin-left: 0;
+             margin-right: 0;
+             margin-bottom: 1rem;
+         }
+         .row {
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+         }
+     }
+     @media (max-width: 576px) {
+         .filter {
+             margin-left: 0;
+             margin-right: 0;
+             margin-bottom: 0.5rem;
+         }
+         .card {
+             width: 90%;
+         }
+         #filters {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr); /* Three filters per row */
+         gap: 0.7rem; /* Space between grid items */
         
-    </style>
+     }
+     }
+     
+ </style>
      <div id="filters" class=" mb-3">
+        <a href="/">
+            <div class="filter">
+                <div><i class="fa-solid fa-house-user"></i></div>
+                <p>Home</p>
+            </div>
+        </a>
         <a href="/Fun">
             <div class="filter">
                 <div><i class="fa-solid fa-fire"></i></div>
@@ -53,12 +118,7 @@
                 <p>AgriTour</p>
              </div>
         </a>
-         <a href="/Trending">
-            <div class="filter">
-                <div><i class="fa-solid fa-fire"></i></div>
-                <p>Trending</p>
-             </div>
-         </a>
+         
          <a href="/Camping">
             <div class="filter">
                 <div><i class="fa-solid fa-campground"></i></div>
@@ -71,24 +131,14 @@
                 <p>Waterfall</p>
              </div>
          </a>
-         <a href="/Hotels">
-            <div class="filter">
-                <div><i class="fa-solid fa-hotel"></i></div>
-                <p>Hotels</p>
-             </div>
-         </a>
-         <a href="/Rooms">
+        
+         <a href="<%=currPath%>/new">
             <div class="filter">
                 <div><i class="fa-solid fa-bed"></i></div>
-                <p>Rooms</p>
+                <p>Add room near location</p>
             </div>
          </a>
-         <div class="switch-info">
-            <div class="form-check  form-switch">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Display Total Before Taxes</label>
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            </div>
-        </div>
+         
      </div>
     
     <ul>

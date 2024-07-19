@@ -32,7 +32,7 @@ module.exports.loginGet=(req,res)=>{
 
 module.exports.loginPost=async(req,res)=>{
     req.flash("success","Login successfully Welcome back to wanderlust");
-     let redirectPath= res.locals.urlpath || "/listing";
+     let redirectPath= res.locals.urlpath || "/";
     res.redirect(redirectPath); 
 }
 
@@ -42,6 +42,6 @@ module.exports.logout=(req,res,next)=>{
             return next(err);
         }
         req.flash("success","you are successfully logOut");
-        res.redirect("/listing");
+        res.redirect("/");
     })
 }

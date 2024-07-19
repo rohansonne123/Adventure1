@@ -2,8 +2,8 @@
 
     <body>
         <div class="row">
-            <div class="col-6 offset-2 mt-3">
-                <h3>Edit The Given Spot</h3>
+            <div class="col-sm-4 offset-sm-1 col-md-10 offset-md-1 col-lg-6 offset-lg-3">
+                <h3><b>Edit The Given Spot</b></h3>
                 <form method="post" action="/Waterfall/<%=editData._id%>?_method=PUT"  novalidate class="needs-validation" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
@@ -32,6 +32,18 @@
                         <input type="file" multiple placeholder="add a image here" name="image"
                             value="<%=editData.image.path%>" class="form-control">
                     </div>
+                    <div class="mb-3">
+                        <label for="insta" class="form-label">Instagram Link</label>
+                        <textarea name="listing[insta]" id="" cols="30" rows="1"
+                            class="form-control" required><%=editData.insta%></textarea>
+                        <div class="invalid-feedback">field to be required</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="youtube" class="form-label">Youtube Link</label>
+                        <textarea name="listing[youtube]" id="" cols="30" rows="1"
+                            class="form-control" required><%=editData.youtube%></textarea>
+                        <div class="invalid-feedback">field to be required</div>
+                    </div>
                     <div class="row">
                         <div class="mb-3 col-md">
                             <label for="location" class="form-label">Location</label>
@@ -47,7 +59,7 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-dark add-btn">submit</button>
+                    <button class="btn btn-dark add-btn mb-3">Update</button>
                 </form>
             </div>
         </div>

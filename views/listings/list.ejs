@@ -13,6 +13,7 @@
         text-align: center;
         opacity: 0.7;
         padding-top: 0;
+        font-size: 1rem;
         
     }
     #filters a{
@@ -20,21 +21,82 @@
         color: black;
         margin-top: 0;
         display: inline;
-        justify-content: center;
+        justify-content: space-between;
         margin-left: 4rem;
         align-items: center;
         text-align: center;
         opacity: 0.7;
         padding-top: 0;
+        font-size: 1rem;
     }
     .filter:hover{
         opacity: 1;
         cursor: pointer;
         text-decoration: underline;
     }
-    
+    @media (max-width: 1200px) {
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .filter {
+            margin-left: 4rem;
+            margin-right: 4rem;
+        }
+    }
+    @media (max-width: 992px) {
+        .filter {
+            margin-left: 5rem;
+        }
+        #filters {
+        justify-content: space-around; /* Spread filters evenly */
+        display: flex; /* Use flex for tablets and above */
+    }
+    .filter, #filters a {
+        font-size: 1.2rem;
+        margin: 0.5rem 1rem;
+    }
+    }
+    @media (max-width: 768px) {
+        #filters {
+            flex-direction: column;
+        }
+        .filter {
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+        .row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    @media (max-width: 576px) {
+        .filter {
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0.5rem;
+        }
+        .card {
+            width: 90%;
+        }
+        #filters {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Three filters per row */
+        gap: 0.7rem; /* Space between grid items */
+       
+    }
+    }
 </style>
  <div id="filters" class=" mb-3">
+    <a href="/">
+        <div class="filter">
+            <div><i class="fa-solid fa-house-user"></i></div>
+            <p>Home</p>
+        </div>
+    </a>
     <a href="/Fun">
         <div class="filter">
             <div><i class="fa-solid fa-fire"></i></div>
@@ -53,12 +115,7 @@
             <p>AgriTour</p>
          </div>
     </a>
-     <a href="/Trending">
-        <div class="filter">
-            <div><i class="fa-solid fa-fire"></i></div>
-            <p>Trending</p>
-         </div>
-     </a>
+     
      <a href="/Camping">
         <div class="filter">
             <div><i class="fa-solid fa-campground"></i></div>
@@ -92,13 +149,16 @@
                     <div class="card-img-overlay"></div>
                     <img src="<%=d.image[0].path%>" class="card-img-top" alt="/listing">
                     <div class="card-body">
-                        <p class="starability-result" data-rating="<%=d.roundRate%>"></p>
+                        
                         <p class="card-text">
                             <b>
                                 <%=d.title%>
-                            </b><br>
-                            &#8377; <%= d.price%>/night
+                            </b> <br>
+                            <b><%=d.location%></b>
                         </p>
+                        <!-- <p class="starability-result" data-rating="<%=d.roundRate%>"></p> -->
+                        
+                         
                     </div>
                 </div>
             </a>
