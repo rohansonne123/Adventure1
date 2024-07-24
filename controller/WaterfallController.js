@@ -40,7 +40,7 @@ module.exports.showRoute=async(req,res)=>{
         req.flash("error","listing you trying to access is not there");
         return res.redirect(`/listing/${id}`);
     }
-    res.render("./Waterfall/Show.ejs",{details});
+    res.render("./Waterfall/show.ejs",{details});
 }
 
 module.exports.updateRoute=async(req,res)=>{
