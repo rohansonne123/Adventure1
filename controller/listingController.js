@@ -72,7 +72,7 @@ module.exports.updateput=async(req,res)=>{
             path: file.path,
             filename: file.filename
         }));
-        updatedListing.images.push(...newImages); // Add new images to existing ones
+        updatedListing.image.push(...newImages); // Add new images to existing ones
         await updatedListing.save();
     }
     
