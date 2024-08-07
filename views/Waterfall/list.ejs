@@ -149,7 +149,10 @@ body {
             <a class="card-link" href="/Waterfall/<%=d._id%>">
                 <div class="card col" style="width: 20rem;">
                     <div class="card-img-overlay"></div>
-                    <img src="<%=d.image[0].path%>" class="card-img-top" alt="/Agri">
+                    <% if (d.image && d.image[0]) { %>
+                        <img src="<%= d.image[0].path %>" class="card-img-top" alt="/Agri">
+                      <% } %>
+                    
                     <div class="card-body">
                         <p class="card-text">
                             <b>
