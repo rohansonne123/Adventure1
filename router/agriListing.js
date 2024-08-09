@@ -44,7 +44,7 @@ router.get("/search", wrapAsync(async (req, res) => {
     const { query } = req.query;
     console.log(query);
     if (!query || query=='') {
-        req.flash("error", "Please enter a search term");
+        
         return res.redirect("/Agri");
     }
 
