@@ -43,7 +43,7 @@ router.post("/:id/rate",isloggedin,wrapAsync(async(req,res,next)=>{
 router.get("/search", wrapAsync(async (req, res) => {
     const { query } = req.query;
     console.log(query);
-    if (!query) {
+    if (!query || query=='') {
         req.flash("error", "Please enter a search term");
         return res.redirect("/Agri");
     }
