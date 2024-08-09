@@ -2,17 +2,27 @@
   <div class="container-fluid">
    
     <a class="navbar-brand" href="/"><i class="main-icon fa-solid fa-person-walking-luggage"></i></a>
+    <div id="adventure-link" class="navbar-nav" style="display: none;">
+      <a class="nav-link" aria-current="page" href="/"><b>Adventure</b></a>
+    </div>
+    
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var adventureLink = document.getElementById('adventure-link');
-        if (window.innerWidth >=  768) {
-          <div class="navbar-nav"  id="adventure-link">
-          <a class="nav-link " aria-current="page" href="/"><b>Adventure</b></a>
-        </div>
-        } 
     
-        // Optional: Update on window resize
-        
+        function checkViewportWidth() {
+          if (window.innerWidth >= 768) {
+            adventureLink.style.display = 'block'; // Show the element
+          } else {
+            adventureLink.style.display = 'none'; // Hide the element
+          }
+        }
+    
+        // Initial check
+        checkViewportWidth();
+    
+        // Update on window resize
+        window.addEventListener('resize', checkViewportWidth);
       });
     </script>
     
