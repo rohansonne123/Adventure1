@@ -45,7 +45,7 @@ router.get("/search", wrapAsync(async (req, res) => {
     console.log(query);
     if (!query) {
         req.flash("error", "Please enter a search term");
-        return res.redirect("/listing");
+        return res.redirect("/Agri");
     }
 
     const listings = await dataAgri.find({
