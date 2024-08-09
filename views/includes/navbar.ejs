@@ -13,8 +13,10 @@
         function checkViewportWidth() {
           if(window.innerWidth <= 768){
             adventureLink.style.display = 'none'; // Show the element
+          }else{
+            adventureLink.style.display = 'block'; // Show the element
           }
-          if (window.innerWidth <= 768 && currPath!="/") {
+          if (window.innerWidth <= 768 && currPath=="/") {
             adventureLink.style.display = 'block'; // Show the element
            
           } 
