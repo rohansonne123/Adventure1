@@ -48,7 +48,7 @@ router.get("/search", wrapAsync(async (req, res) => {
         return res.redirect("/Agri");
     }
 
-    const listings = await dataAgri.find({
+    const allListing = await dataAgri.find({
         $or: [
             { title: { $regex: query, $options: 'i' } },
             { description: { $regex: query, $options: 'i' } },
@@ -57,7 +57,7 @@ router.get("/search", wrapAsync(async (req, res) => {
         ]
     });
 
-    res.render("./Agri/list.ejs", { alllist: listings });
+    res.render("./Agri/list.ejs", { alllist: allListing });
 }));
 
 //index route

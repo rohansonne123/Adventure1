@@ -9,10 +9,10 @@
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var adventureLink = document.getElementById('adventure-link');
-    
+        var currpath = "<%= currPath %>";
         function checkViewportWidth() {
           if(window.innerWidth <= 768){
-            if (currPath=="/") {
+            if (currpath=="/") {
             adventureLink.style.display = 'block'; // Show the element
            
           } else{
