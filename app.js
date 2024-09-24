@@ -135,10 +135,8 @@ app.use(async (req, res, next) => {
 //Home page
 app.get("/",wrapAsync(async(req,res)=>{
     const visit=await UserVisit.find({});
-    let count2=0;
-    for(let i in visit){
-        count2++;
-    }
+    let count2=visit.length;
+    
 
     const userreg=await user.find({});
     let count3=0;
